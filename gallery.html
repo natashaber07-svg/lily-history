@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фотогалерея</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <script src="examples/gallery.js"></script>
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .gallery-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 186px;
+            height: 140px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .gallery-item p {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #333;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            animation: zoom 0.3s;
+        }
+        
+        @keyframes zoom {
+            from {transform: scale(0.5);}
+            to {transform: scale(1);}
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #bbb;
+        }
+        
+        .modal-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            text-align: center;
+            color: #fff;
+            padding: 10px 0;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-title">Содержание</div>
+            <ul class="menu">
+                <li><a href="index.html">На главную</a></li>
+                <li><a href="history.html">История лилий</a></li>
+                <li><a href="gallery.html" class="active">Фотогалерея</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <h1 class="page-title">Ф О Т О Г А Л Е Р Е Я</h1>
+            
+            <p class="intro-text">
+                Лилия - эти цветы родом из Древней Греции, мира и величественности на Руси, 
+                а во Франции эти цветы обозначали - милосердие, сострадание и правосудие.
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7265.jpg" alt="Венту Марсель">
+                    <p>Венту Марсель</p>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7267.jpg" alt="Марлен">
+                    <p>Марлен</p>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7268.jpg" alt="Лилия даурская">
+                    <p>Лилия даурская</p>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7269.jpg" alt="Сорбет">
+                    <p>Сорбет</p>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7270.jpg" alt="Лилия регале">
+                    <p>Лилия регале</p>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7271.jpg" alt="Наина">
+                    <p>Наина</p>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7275.jpg" alt="Белое Безмолвие">
+                    <p>Белое Безмолвие</p>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7277.jpg" alt="Аз Болгария">
+                    <p>Аз Болгария</p>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7285.jpg" alt="Аз Диадема">
+                    <p>Аз Диадема</p>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7286.jpg" alt="Вермер">
+                    <p>Вермер</p>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="images/7291.jpg" alt="Аз Карина">
+                    <p>Аз Карина</p>
+                </div>
+        </div>
+    </div>
+    
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div class="modal-caption" id="caption"></div>
+    </div>
+    
+
+</body>
+</html>

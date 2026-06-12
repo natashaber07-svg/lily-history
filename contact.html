@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Контактная информация</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-title">Содержание</div>
+            <ul class="menu">
+                <li><a href="index.html">На главную</a></li>
+                <li><a href="history.html">История лилий</a></li>
+                <li><a href="gallery.html">Фотогалерея</a></li>
+                <li><a href="contact.html" class="active">Контакты</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <h1 class="page-title">К О Н Т А К Т Н А Я &nbsp; И Н Ф О Р М А Ц И Я</h1>
+            
+            <p><strong>Магазин "Лилия" расположен по адресу:</strong></p>
+            <p>г. Ростов-на-Дону, ул. Пушкинская 120</p>
+            <br>
+            <p><strong>Контактный телефон:</strong></p>
+            <p>2-354-987, 8945123456</p>
+            <br>
+            <p><strong>Директор магазина - Бережнова Наталья Андреевна</strong></p>
+            
+                
+            <form action="send.php" method="POST" class="contact-form">
+                <p class="form__title">Форма обратной связи</p>
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="subject">Тема:</label>
+                <input type="text" id="subject" name="subject" required>
+                
+                <label for="message">Текст сообщения:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
